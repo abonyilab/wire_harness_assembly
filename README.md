@@ -1,10 +1,9 @@
-# wire_harness_assembly
-Models of wire harness assembly
+# Models of wire harness assembly
 
 Ontology-based analysis of manufacturing processes - lessons learned from the case study of wire harness production
 László Nagy - Tamás Ruppert - János Abonyi
 
-List of content:
+## List of content:
 
 -- WH_ontology.owl --
 OWL format of the wire harness ontology, created in Protégé.
