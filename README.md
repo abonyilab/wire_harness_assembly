@@ -1,7 +1,9 @@
 # Models of wire harness assembly
 
-Ontology-based analysis of manufacturing processes - lessons learned from the case study of wire harness production
-László Nagy - Tamás Ruppert - János Abonyi
+*Ontology-based analysis of manufacturing processes - lessons learned from the case study of wire harness production*
+László Nagy, Tamás Ruppert, János Abonyi - *under publishing*
+
+
 
 ## List of content:
 
@@ -30,4 +32,4 @@ Contain all the files needed to create the multilayer representation of the wire
 Figure 19 in the article.
 
 
-###MTA-PE Lendület Complex Systems Monitoring Research Group, Department of Process Engineering, University of Pannonia, Egyetem u. 10, POB 158, Veszprém, H-8200, Hungary janos@abonyilab.com
+###### MTA-PE Lendület Complex Systems Monitoring Research Group, Department of Process Engineering, University of Pannonia, Egyetem u. 10, POB 158, Veszprém, H-8200, Hungary janos@abonyilab.com
