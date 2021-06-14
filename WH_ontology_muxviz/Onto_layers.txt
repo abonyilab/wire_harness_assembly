@@ -1,0 +1,4 @@
+layerID layerLabel
+1 Activity-Equipment
+2 Activity-Skill
+3 Activity-Workstation

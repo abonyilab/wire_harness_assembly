@@ -1,0 +1,126 @@
+---Classes---
+Component
+Module
+Resource
+FieldDevice
+Product
+prov:Activity
+prov:Person
+Skill
+Station
+
+---ObjectProperties---
+componentRequireActivity
+equipmentRequireResource
+workstationRequireEquipment
+workstationRequireResource
+activityRequireEquipment
+activityRequireSkill
+hasPart
+hasComponent
+requiresMachines
+canOperate
+hasSkill
+activityPrecedence
+
+---DataProperties---
+activityType
+activityTypeName
+activityTypeRemark
+activityTypeUnit
+activityTime
+additionalTime
+resourceCost
+resourceName
+skillCost
+skillName
+equipmentCost
+equipmentName
+moduleName
+componentType
+
+-----------------------
+Individual: @A*
+Types: prov:Activity
+Facts:  activityType @B*(xsd:string),
+	activityTypeName @C*(xsd:string),
+	activityTime @D*(xsd:integer),
+	additionalTime @E*(xsd:integer),
+	activityTypeUnit @F*(xsd:string),
+	activityTypeRemark @G*(xsd:string)
+-----------------------
+Individual: @A*
+Types: Resource
+Facts:  resourceCost @B*(xsd:integer),
+	resourceName @C*(xsd:string)
+Individual: @E*
+Types: Skill
+Facts:  skillCost @F*(xsd:integer),
+	skillName @G*(xsd:string)
+Individual: @I*
+Types: FieldDevice
+Facts:  equipmentCost @J*(xsd:integer),
+	equipmentName @K*(xsd:string)
+Individual: @N*
+Types: Module
+Facts:  moduleName @O*(xsd:string)
+-----------------------
+Individual: @A*
+Types: Component
+Facts:  componentType @B*(xsd:string)
+-----------------------
+Individual: @A*
+Types: Component
+Facts:  zoneOfAssembly @B* (xsd:string)
+-----------------------
+Individual: @A*
+Types: prov:Activity
+Facts: activityPrecedence @**
+-----------------------
+Individual: @A*
+Types: prov:Activity
+Facts: activityRequireSkill @**
+-----------------------
+Individual: @A*
+Types: prov:Person
+Facts: hasSkill @**
+-----------------------
+Individual: @A*
+Types: Product
+Facts: hasPart @**
+-----------------------
+Individual: @A*
+Types: FieldDevice
+Facts: equipmentRequireResource @**
+-----------------------
+Individual: @A*
+Types: Station
+Facts: workstationRequireEquipment @**
+-----------------------
+Individual: @A*
+Types: Station
+Facts: workstationHasResource @**
+-----------------------
+Individual: @A*
+Types: prov:Activity
+Facts: requiresMachines @**
+-----------------------
+Individual: @A*
+Types: Module
+Facts: hasComponent @**
+-----------------------
+Individual: @A*
+Types: prov:Activity
+Facts: activityRequireEquipment @**
+-----------------------
+Individual: @A*
+Types: Component
+Facts: componentRequireActivity @**
+B-KO
+KP--YD
+-----------------------
+Individual: @A*
+Types: prov:Person
+Facts: canOperate @**
+-----------------------
+

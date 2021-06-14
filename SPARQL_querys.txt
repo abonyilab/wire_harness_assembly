@@ -1,0 +1,42 @@
+
+-----------------------------------------------------------------------
+--- Module - Component ---
+
+
+PREFIX wh: <https://www.abonyilab.com/wh-ontology#>
+PREFIX dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX : <https://www.abonyilab.com/wh-ontology>
+PREFIX smo: <http://w3id.org/i40/smo>
+PREFIX smo1: <http://w3id.org/i40/smo/>
+PREFIX DUL: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+SELECT DISTINCT ?Module ?componentType (COUNT (DISTINCT((?Component))) AS ?totalCType)
+	WHERE {  <https://www.abonyilab.com/wh-ontology#p64> DUL:hasPart ?Module .
+   			?Module DUL:hasComponent ?Component .
+         OPTIONAL{?Component wh:componentType ?componentType }
+}
+GROUP BY ?Module ?componentType
+ORDER BY ?totalCType
+
+
+-----------------------------------------------------------------------
+--- Workstation - Skill ---
+
+PREFIX wh: <https://www.abonyilab.com/wh-ontology#>
+PREFIX dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX : <https://www.abonyilab.com/wh-ontology>
+PREFIX smo: <http://w3id.org/i40/smo>
+PREFIX smo1: <http://w3id.org/i40/smo/>
+PREFIX DUL: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+SELECT DISTINCT ?Station ?Skill ?skillName (COUNT (DISTINCT((?Activity))) AS ?totalActivity) 
+	WHERE {  <https://www.abonyilab.com/wh-ontology#p64> DUL:hasPart ?Module .
+   			?Module DUL:hasComponent ?Component .
+     	    ?Component wh:componentRequireActivity ?Activity .
+    		?Activity smo1:requiresMachines ?Station .
+    		?Activity wh:activityRequireSkill ?Skill .
+    		?Activity wh:activityRequireEquipment ?FieldDevice .
+         OPTIONAL{?Skill wh:skillName ?skillName }
+}
+GROUP BY ?Station ?Skill ?skillName
+ORDER BY ?totalActivity 
+
+
